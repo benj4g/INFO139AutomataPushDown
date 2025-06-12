@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de APD</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Autómata Pushdown (APD)</h1>
+    <form id="apd-form">
+      <label for="transitions">Transiciones (una por línea, formato (q,a,Z):(p,YZ)):</label>
+      <textarea id="transitions" required>(q1,a,R):(q1,AR)
+(q1,b,A):(q2,ε)</textarea>
+
+      <label for="initial-state">Estado inicial:</label>
+      <input type="text" id="initial-state" required>
+
+      <label for="acceptance-type">Tipo de aceptación:</label>
+      <select id="acceptance-type" required>
+        <option value="estado">Por estado final</option>
+        <option value="pila">Por pila vacía</option>
+      </select>
+
+      <label for="final-state">Estado final (si aplica):</label>
+      <input type="text" id="final-state">
+
+      <label for="input-word">Palabra de entrada:</label>
+      <input type="text" id="input-word" required>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
